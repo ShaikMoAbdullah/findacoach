@@ -21,7 +21,7 @@ export default function Home() {
           <span className="cursor-pointer">CONTACT US</span>
         </div>
       </header>
-      <div className="relative border-2 border-black">
+      <div className="relative">
         <Image src="/home.webp" alt="home page" width={1500} height={1000} />
       </div>
     </div>
