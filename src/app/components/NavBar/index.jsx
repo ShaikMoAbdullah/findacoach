@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Header = () => {
+const NavBar = () => {
   return (
     <header className="flex justify-between items-center p-4 sticky top-0 z-10 bg-white">
       <div className="w-1/4 flex justify-center items-center">
@@ -23,4 +23,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;
