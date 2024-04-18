@@ -8,8 +8,82 @@ export default function Home() {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
   ];
   const coaches = [
-    { id: 1, name: "John", role: "Speaker" },
-    { id: 2, name: "Sam", role: "Technical" },
+    {
+      id: 1,
+      name: "Alice",
+      role: "Software Engineer",
+      companyName: "ABC Tech",
+    },
+    { id: 2, name: "Bob", role: "Product Manager", companyName: "XYZ Corp" },
+    {
+      id: 3,
+      name: "Charlie",
+      role: "Data Analyst",
+      companyName: "123 Solutions",
+    },
+    {
+      id: 4,
+      name: "David",
+      role: "Marketing Specialist",
+      companyName: "Global Marketing Group",
+    },
+    {
+      id: 5,
+      name: "Eva",
+      role: "HR Manager",
+      companyName: "HR Solutions Inc.",
+    },
+    {
+      id: 6,
+      name: "Frank",
+      role: "Financial Analyst",
+      companyName: "Finance Solutions LLC",
+    },
+    {
+      id: 7,
+      name: "Grace",
+      role: "Customer Representative",
+      companyName: "Customer Care Corp",
+    },
+    {
+      id: 8,
+      name: "Henry",
+      role: "Operations Manager",
+      companyName: "Operations Inc.",
+    },
+    {
+      id: 9,
+      name: "Ivy",
+      role: "Graphic Designer",
+      companyName: "Creative Designs Ltd.",
+    },
+    {
+      id: 10,
+      name: "Jack",
+      role: "Sales Executive",
+      companyName: "Sales Solutions",
+    },
+    {
+      id: 11,
+      name: "Kelly",
+      role: "Project Coordinator",
+      companyName: "Project Associates",
+    },
+    {
+      id: 12,
+      name: "Leo",
+      role: "Quality Assurance Engineer",
+      companyName: "Quality Services",
+    },
+  ];
+
+  const stats = [
+    { id: 1, count: "18000+", name: "EXPERTS" },
+    { id: 2, count: "1000+", name: "1-1 COACHES" },
+    { id: 3, count: "750+", name: "LIVE SESSIONS" },
+    { id: 4, count: "500+", name: "VIDEOS" },
+    { id: 5, count: "250+", name: "PODCASTS" },
+    { id: 6, count: "200+", name: "BLOGS" },
   ];
 
   useEffect(() => {
@@ -83,8 +157,55 @@ export default function Home() {
             in-demand experts and for group learning via highly curated live
             learning sessions with some of the top global experts.
           </p>
-          <div className="flex gap-8 w-5/6 overflow-scroll scroll-smooth"></div>
+          <div className="flex flex-wrap gap-8 w-5/6 overflow-scroll scroll-smooth justify-center items-center">
+            {coaches.map((coach) => (
+              <div
+                key={coach.id}
+                className="rounded-xl border border-gray-200 p-2 flex flex-col gap-2 w-1/5"
+              >
+                <Image
+                  src={`/coaches/Coach_Carousal-${coach.id}.webp`}
+                  alt="Coach"
+                  width={300}
+                  height={500}
+                  className="rounded-xl"
+                />
+                <div>
+                  <p className="font-semibold">{coach.name}</p>
+                  <div className="text-sm">
+                    <p>{coach.role}</p>
+                    <p> {coach.companyName}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
+        <section className="flex flex-wrap w-screen justify-between items-center p-12 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 h-screen">
+          {stats.map((stat) => (
+            <div
+              key={stat.id}
+              className="border bg-pink-50 w-96 flex flex-col gap-8 p-12 justify-center items-center rounded-xl"
+            >
+              <Image
+                src={`/stats/${stat.id}.png`}
+                alt="image"
+                width={100}
+                height={100}
+              />
+              <p className="text-5xl font-extrabold">{stat.count}</p>
+              <p>{stat.name}</p>
+            </div>
+          ))}
+        </section>
+        {/* <section className="text-center border-2 border-black flex flex-col gap-4">
+          <p className="text-2xl font-semibold">HOW IT WORKS?</p>
+          <p className="text-lg">
+            Discover your path to action with{" "}
+            <span className="font-semibold">Find a Coach™</span> – our platform
+            guides you into motion through a few seamless steps
+          </p>
+        </section> */}
       </section>
     </div>
   );
